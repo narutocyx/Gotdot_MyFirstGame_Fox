@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6yit8rkp1ho8"]
+[gd_scene load_steps=5 format=3 uid="uid://b6yit8rkp1ho8"]
 
 [ext_resource type="Texture2D" uid="uid://bxn66ucyabuii" path="res://AssetBundle/Sprites/ForestBackground.png" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://1yncx56lt5gb" path="res://Scenes/player.tscn" id="2_gl6un"]
+[ext_resource type="PackedScene" uid="uid://bn3oecapjrdbv" path="res://Scenes/slime.tscn" id="3_1kpsc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gl6un"]
 
 [node name="Game" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Background 1" type="Sprite2D" parent="."]
 position = Vector2(-120, 0)
@@ -17,6 +19,9 @@ texture = ExtResource("1_iukft")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.43, 2.43)
+
+[node name="Slime" parent="." instance=ExtResource("3_1kpsc")]
+position = Vector2(79, 64)
 
 [node name="Player" parent="." instance=ExtResource("2_gl6un")]
 position = Vector2(-136, 74)

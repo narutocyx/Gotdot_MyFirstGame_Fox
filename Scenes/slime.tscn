@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bn3oecapjrdbv"]
+
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_7j2ps"]
+[ext_resource type="Texture2D" uid="uid://dobtxlhc512v2" path="res://AssetBundle/Sprites/Slimer.png" id="1_edvkk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twkhy"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(0, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_702f5"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(41, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6d1p"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(82, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jspn6"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(123, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t824d"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(164, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tes0j"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(205, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ybfb"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(246, 0, 41, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arvc6"]
+atlas = ExtResource("1_edvkk")
+region = Rect2(287, 0, 41, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ked3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twkhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_702f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6d1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jspn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t824d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tes0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ybfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arvc6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdbwa"]
+
+[node name="Slime" type="Area2D"]
+script = ExtResource("1_7j2ps")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ked3l")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.655111
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_mdbwa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
