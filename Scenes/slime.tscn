@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bn3oecapjrdbv"]
 
-[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_7j2ps"]
+[ext_resource type="Script" uid="uid://1i46eqf8chm3" path="res://Scripts/slime.gd" id="1_7j2ps"]
 [ext_resource type="Texture2D" uid="uid://dobtxlhc512v2" path="res://AssetBundle/Sprites/Slimer.png" id="1_edvkk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twkhy"]
